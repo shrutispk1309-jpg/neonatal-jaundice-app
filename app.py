@@ -1133,7 +1133,7 @@ class Dashboard:
 
         cols = ['Date','name','risk_level','Bilirubin','Age','📷 Image']
         cols = [c for c in cols if c in disp.columns]
-        styled = disp[cols].style.applymap(color_risk, subset=['risk_level'])\
+        styled = disp[cols].style.map(color_risk, subset=['risk_level'])\
                                   .format({'Bilirubin':'{:.1f} mg/dL'})
         st.dataframe(styled, use_container_width=True)
 
